@@ -13,6 +13,9 @@
 //①から③の合計は税込み928円
 //①から③の平均は税込み309円
 
+//解答例 入力値を1つとり、入力毎にdoubleに型変換、消費税を掛けるを3セット
+//できたものをsumに合計を渡す、averageで平均をだす。
+
 package day02;
 
 import java.io.BufferedReader;
@@ -50,7 +53,7 @@ public class Lesson3 {
 //		入力毎にインクリメント
 //		inputCount = 3;
 		sum = (price1 + price2 + price3);
-		average = ((price1 + price2 + price3) / inputCount);
+		average = (sum / inputCount);
 		
 //		確認用計算出力
 //		System.out.println(sum);
@@ -58,8 +61,8 @@ public class Lesson3 {
 
 		System.out.println("①から③の合計は税込み" + (int) (sum * tax) + "円");
 		
-		//		308円にならない→Math.ceilメソッドで切り上げ
-		//		System.out.println("①から③の平均は税込み" + (int) (average * 1.08) + "円");
+//		308円にならない→Math.ceilメソッドで切り上げ
+//		System.out.println("①から③の平均は税込み" + (int) (average * 1.08) + "円");
 		System.out.println("①から③の平均は税込み" + (int) Math.ceil(average * tax) + "円");
 
 	}

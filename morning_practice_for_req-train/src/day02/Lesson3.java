@@ -61,7 +61,7 @@ public class Lesson3 {
 
 		System.out.println("①から③の合計は税込み" + (int) (sum * tax) + "円");
 		
-//		308円にならない→Math.ceilメソッドで切り上げ
+//		308円にならない、小数点切り捨て（未検証、税計算の位置で小数点処理が変わる、）→Math.ceilメソッドで切り上げ
 //		System.out.println("①から③の平均は税込み" + (int) (average * 1.08) + "円");
 		System.out.println("①から③の平均は税込み" + (int) Math.ceil(average * tax) + "円");
 

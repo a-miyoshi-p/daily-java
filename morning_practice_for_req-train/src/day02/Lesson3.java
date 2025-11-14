@@ -15,7 +15,9 @@
 
 package day02;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Lesson3 {
 
@@ -26,6 +28,33 @@ public class Lesson3 {
 		int inputCount = 0;//入力した回数
 
 		/*ここから記入*/
+		double tax = 1.08;
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+		
+		System.out.println("金額①を入力してください");
+		String str1 = reader.readLine();
+		System.out.println("金額②を入力してください");
+		String str2 = reader.readLine();
+		System.out.println("金額③を入力してください");
+		String str3 = reader.readLine();
+
+		int price1 = Integer.parseInt(str1);
+		int price2 = Integer.parseInt(str2);
+		int price3 = Integer.parseInt(str3);
+
+		inputCount = 3;
+		sum = (price1 + price2 + price3);
+		average = ((price1 + price2 + price3) / inputCount);
+
+		System.out.println(sum);
+		System.out.println(average);
+
+		System.out.println("①から③の合計は税込み" + (int) (sum * tax) + "円");
+		//		308円にならない→Math.ceilメソッドで切り上げ
+		//		System.out.println("①から③の平均は税込み" + (int) (average * 1.08) + "円");
+		System.out.println("①から③の平均は税込み" + (int) Math.ceil(average * tax) + "円");
 
 	}
 

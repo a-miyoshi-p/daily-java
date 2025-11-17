@@ -21,13 +21,40 @@ input number[0or1]? >>2
 */
 package day03;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Lesson5 {
 
 	public static void main(String[] args) throws IOException {
 		/*ここから記入*/
+		System.out.println("input number[0or1]?");
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String str = reader.readLine();
+		int num = Integer.parseInt(str);
+
+		boolean[] faq = { true, false };
+
+		switch (num) {
+		case 0:
+			System.out.println("配列の" + num + "番目は" + faq[num] + "です。");
+			break;
+		case 1:
+			System.out.println("配列の" + num + "番目は" + faq[num] + "です。");
+			break;
+		default:
+			System.out.println("配列の範囲外の値が入力されました");
+			break;
+
+		}
 
 	}
-
 }
+
+//出力のfaq[]	について[]の中に変数（ここではnum）での要素指定、（添え字を変数に）ができる
+//System.out.println("配列の" + num + "番目は" + faq[0] + "です。");
+//System.out.println("配列の" + num + "番目は" + faq[1] + "です。");
+//上記二つをまとめられる
+//System.out.println("配列の" + num + "番目は" + faq[num] + "です。");

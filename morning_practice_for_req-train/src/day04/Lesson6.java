@@ -22,6 +22,27 @@ public class Lesson6 {
 	public static void main(String[] args) {
 		/*ここから記入*/
 
+		String[] name = { "鈴木", "田中", "佐藤" };
+
+		for (int i = 0; i < name.length; i++) {
+			if (i == name.length - 1) {
+				System.out.print(name[i]);
+			} else {
+				System.out.print(name[i] + ",");
+			}
+			//解答
+			//		String[] names = { "鈴木", "田中", "佐藤" };
+			//		String nameOutput = "";
+			//
+			//		for (int i = 0; i < names.length; i++) {
+			//			nameOutput += names[i];
+			//
+			//			if (i != names.length - 1) {
+			//				nameOutput += ",";
+			//			}
+			//		}
+			//		System.out.print(nameOutput);
+		}
 	}
 
 }

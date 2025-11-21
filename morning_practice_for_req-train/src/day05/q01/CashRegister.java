@@ -28,30 +28,59 @@
 //input money? >>56789
 //税抜き価格：\56789
 //税込み価格：\62467
-
 package day05.q01;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+/**
+ * 消費税計算クラス
+ */
+public class CashRegister {
+	/**
+	 * 入力金額
+	 */
+	int price;
+	/**
+	 * 税込み価格
+	 */
+	int inTaxPrice;
+	/**
+	 * 消費税率
+	 */
+	double tax = 1.1;
 
-class Main {
+	/**
+	 * 
+	 * @param price 入力金額
+	 */
+	public CashRegister(int price) {
+		this.price = price;
+		calcPrice(price);
+	}
 
-	public static void main(String[] args) throws IOException {
-		/*ここから記入*/
-
-		System.out.println("商品の税込み金額（消費税10％）を計算します。");
-		System.out.println("税抜き金額を入力してください。");
-		System.out.println("input money? >>");
-
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String str = reader.readLine();
-		int price = Integer.parseInt(str);
-		//
-		CashRegister a = new CashRegister(price);
-
-		a.show();
+	/**
+	 * 消費税計算
+	 * @param p 税抜き価格
+	 * @return　税込み価格
+	 * 
+	 */
+	//	この場合戻り値使用しなくても値は代入される→void型変換とreturn文の削除可)
+	//	戻り値を使用して出力の必要あり
+	//	出力をmain側で行うとできるか（戻り値を受ける変数を設定）→syso(その変数)
+	public int calcPrice(int p) {
+		//インスタンス変数への代入
+		this.price = p;
+		//税込み計算
+		inTaxPrice = (int) (p * tax);
+		return this.inTaxPrice;
 
 	}
 
+	/**
+	 * 処理後出力
+	 */
+	public void show() {
+
+		System.out.println("税抜き価格：\\" + price);
+
+		System.out.println("税抜き価格：\\" + inTaxPrice);
+	}
 }

@@ -54,33 +54,30 @@
 
 package day05.q02;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
-class Main {
+public class ConsoleReader {
+	//	【ConsoleReaderクラス】
+	//  inputIdメソッドを以下の要件に従い実装しなさい。
+	//  ・戻り値の型：int
+	//  ・メソッド名：inputId
+	//  ・引数：なし
+	//  ・throws IOException
+	//  処理：コンソールから入力を行い、整数に変換する。
+	//        変換した整数をreturnする。
+	int id;
+	
+	public int inputId() throws IOException {
+		
 
-	public static void main(String[] args) throws IOException {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String str = reader.readLine();
 
-		boolean result = false;
-		int id = 0;
+		id = Integer.parseInt(str);
 
-		ConsoleReader cr = new ConsoleReader();
-		Validation vd = new Validation();
-
-		while (result == false) {
-			System.out.println("4ケタのログインIDを入力してください");
-			System.out.println("input id? >>");
-
-			id = cr.inputId();
-			result = vd.checkId(id);
-			if (result) {
-				System.out.println("ログインに成功しました");
-				break;
-			}
-			System.out.println("ログインできません");
-			System.out.println("もう一度入力してください");
-
-		}
-		System.out.println("ようこそ、ID:" + id + "さん");
+		return id;
 
 	}
 

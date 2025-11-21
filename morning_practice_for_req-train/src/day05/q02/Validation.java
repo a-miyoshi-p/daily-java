@@ -54,34 +54,13 @@
 
 package day05.q02;
 
-import java.io.IOException;
+public class Validation {
 
-class Main {
-
-	public static void main(String[] args) throws IOException {
-
-		boolean result = false;
-		int id = 0;
-
-		ConsoleReader cr = new ConsoleReader();
-		Validation vd = new Validation();
-
-		while (result == false) {
-			System.out.println("4ケタのログインIDを入力してください");
-			System.out.println("input id? >>");
-
-			id = cr.inputId();
-			result = vd.checkId(id);
-			if (result) {
-				System.out.println("ログインに成功しました");
-				break;
-			}
-			System.out.println("ログインできません");
-			System.out.println("もう一度入力してください");
-
+	public boolean checkId(int i) {
+		if (i == 1111 || i == 2222) {
+			return true;
+		} else {
+			return false;
 		}
-		System.out.println("ようこそ、ID:" + id + "さん");
-
 	}
-
 }

@@ -55,5 +55,34 @@
 package day06.q02;
 
 public class Bank {
+	/*	・フィールド
+		- bankCode:String 初期値:"000111"
+		- bankName:int 初期値:"シェアード銀行"
+		- depositor:Depositor 
+	・メソッド
+		+ showData():戻り値の型 void 
+			・銀行情報としてbankCode,bankNameフィールドの内容を表示します
+			・depositorのshowData()を呼び出します
+		+ depositorのsetter,getter(ソースタブの機能を用いて定義する)*/
+	private String bankCode = "000111";
+	private String bankName = "シェアード銀行";
+	private Depositor depositor;
+
+	public Depositor getDepositor() {
+		return depositor;
+	}
+
+	public void setDepositor(Depositor depositor) {
+		this.depositor = depositor;
+	}
+
+	public void showData() {
+		
+		System.out.println("\n銀行情報を表示します");
+		System.out.println("bankCode:" + bankCode);
+		System.out.println("bankName:" + bankName);
+		//こちらで呼び出し
+		depositor.showData();
+	}
 
 }

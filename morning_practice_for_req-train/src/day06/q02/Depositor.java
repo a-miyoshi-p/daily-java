@@ -55,5 +55,40 @@
 package day06.q02;
 
 public class Depositor {
+	/*//【Depositor】
+	//	・フィールド
+	//	- name:String
+	//	- money:int
+	//・メソッド
+	//	+ showData():戻り値の型 void 
+	//		・預金者情報としてフィールドの内容を表示します
+	//	+ 各フィールドのsetter,getter(ソースタブの機能を用いて定義する)
+	*/
+	private String name;
+	private int money;
+
+
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	
+	public void showData() {
+		System.out.println("\n預金者情報を表示します。");
+		System.out.println("name:" + name);
+		System.out.println("money" + money);
+	}
 
 }

@@ -59,8 +59,12 @@
 
 /*質問
  *	クラスメソッドはインスタンスメソッドと何が違いますか？
+ *	A:インスタンスに関係するかどうかの違い
  *	staticキーワードの使用例を上げてください
+ *	A:独立した機能を持たせるとき、例としては更新の回数をカウントするとき
  *	更新はDataクラスで行っているのにMainクラスで呼び出しているshowメソッドに反映されているのはなぜですか？
+ *	A:updateメソッドで更新後の値をMemberクラスのsetterに格納、
+ *	→mainにてMemberで展開しているshowメソッドが変更後の値を参照するから。
  * */
 
 package day07.q02;
@@ -69,6 +73,17 @@ public class Main {
 
 	public static void main(String[] args) {
 		/*ここから記入*/
+		Member[] member = new Member[3];
+		member[0]=new Member(1,"人見");
+		member[1]=new Member(2,"植木");
+		member[2]=new Member(3,"吉崎");
+		
+		MemberManager.show(member);
+//		引数member
+		MemberManager.update(member,1,"三浦");
+		
+		MemberManager.show(member);
+		
 
 	}
 

@@ -26,7 +26,13 @@ public class MemberManager {
 	}
 
 	public static void update(Member[] list, int id, String name) {
-		System.out.println("ID：" + id + "のメンバー名を" + name + "に更新します");
-		
+		System.out.println("\nID：" + id + "のメンバー名を" + name + "に更新します\n");
+		for (Member m : list) {
+			if (m.getId() == id) {
+				m.setName(name);
+				break;
+			}
+		}
+
 	}
 }

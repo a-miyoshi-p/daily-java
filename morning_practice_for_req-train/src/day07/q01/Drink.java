@@ -71,3 +71,4 @@ public class Drink {
 		System.out.println(name + ":" + price + "円です。");
 	}
 }
+

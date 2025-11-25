@@ -39,19 +39,35 @@
 
 package day07.q01;
 
-class Main {
+public class Drink {
+	//	・フィールド
+	//	- price:int
+	private int price;
+	//	- name:String
+	private String name;
 
-	public static void main(String[] args) {
-		/*ここから記入*/
-		Drink[] drink = new Drink[3];
-		drink[0]=new Drink(140,"リアル・コーラ");
-		drink[1]=new Drink(210,"ハイパードライ");
-		drink[2]=new Drink();
-		
-		for(Drink drink1:drink) {
-			drink1.show();
-		}
-
+	//・コンストラクタ（Eclipseの機能を用いて生成すること）
+	//	+ Drink() 
+	//		・price=120
+	//		・name="ビタミン麦茶"
+	public Drink() {
+		super();
+		price = 120;
+		name = "ビタミン麦茶";
 	}
 
+	//	+ Drink(price:int, name:String) 
+	//		・フィールドname,priceに引数の値を代入する
+	public Drink(int price, String name) {
+		super();
+		this.price = price;
+		this.name = name;
+	}
+
+	//・メソッド
+	//	+ show():戻り値の型 void 
+	//		・飲料水情報としてフィールドの内容を表示します
+	public void show() {
+		System.out.println(name + ":" + price + "円です。");
+	}
 }

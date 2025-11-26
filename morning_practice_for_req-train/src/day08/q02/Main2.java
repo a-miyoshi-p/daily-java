@@ -68,14 +68,32 @@
 
 package day08.q02;
 
-import day08.q01.Magic;
-
 public class Main2 {
 
 	public static void main(String[] args) throws InterruptedException {
 		Magic magic = new Magic("魔法使い");// 名前を引数に入力
 		/*ここから記入*/
+		//・MagicクラスとSorcererクラスを生成する。（コンストラクタ引数に任意の名前を与える。)
+		Sorcerer sorcerer = new Sorcerer("魔導士");
+		//・Monsterクラスを生成する。（引数に任意の名前と整数＝HPを入力）
+		Monster monster = new Monster("スライム", 300);
+		//・攻撃ターンをカウントする合計用変数を宣言。
+		int count = 0;
+		//・while文を記述する
+		//条件：monster.getHp()>=0
+		while (monster.getHp() >= 0) {
+			//ブロック内にMagicクラスとSorcererクラスのattackメソッドを呼び出す。（引数に任意の整数＝魔力とmonsterを入力。）
+			magic.attack(10, monster);
+			sorcerer.attack(10, monster);
 
+			//ターン数をインクリメント
+			++count;
+			//ターン数確認用
+			System.out.println(count + "回目");
+
+		}
+		//・ループから抜けた後、"〇ターン目でmonster名を倒した！！"を出力。
+		System.out.println(count + "ターン目で" + monster.getName() + "を倒した！！");
 	}
 
 }

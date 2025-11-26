@@ -10,21 +10,20 @@ public class Magic {
 		this.name = name;
 	}
 
-	public void attack(int mp) {
-		System.out.println(name + "の攻撃！！");
-		Random rand =new Random();
-		int randomDamage= rand.nextInt(0-mp)+10;
-//		int damege = (int) (Math.random() * mp) + 10;
+	//	・メソッド
+	//	+ attack(mp:int,monster:Monster):戻り値の型 void 
+	public void attack(int mp, Monster monster) {
+		//・(name + "の攻撃！！")と表示
+		System.out.println("\n" + name + "の攻撃！！");
+		Random rand = new Random();
+		//・モンスターに乱数（0-mpの間）+10の数値のダメージを与える（"モンスター名に・・・のダメージ!!"と表示）
+		int randomDamage = rand.nextInt(mp) + 10;
+		//int damege = (int) (Math.random() * mp) + 10;
 		System.out.println("相手に" + randomDamage + "のダメージ！！");
-		
-		
-//		Monster.setHp();
+		//・モンスターのhpにダメージを減算した後の数値をsetする
+		monster.setHp(monster.getHp() - randomDamage);
+		//モンスターHP確認用
+//		System.out.println("monster hp:"+monster.getHp());
 	}
-	
-//	・メソッド
-//	+ attack(mp:int,monster:Monster):戻り値の型 void 
-//		・(name + "の攻撃！！")と表示
-//		・モンスターに乱数（0-mpの間）+10の数値のダメージを与える（"モンスター名に・・・のダメージ!!"と表示）
-//		・モンスターのhpにダメージを減算した後の数値をsetする
 
 }

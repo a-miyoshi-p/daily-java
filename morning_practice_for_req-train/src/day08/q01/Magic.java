@@ -1,7 +1,7 @@
 package day08.q01;
 
 public class Magic {
-	private String name;
+	protected String name;
 
 	// 問題解答
 	public Magic(String name) {

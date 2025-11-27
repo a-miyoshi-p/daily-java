@@ -47,7 +47,30 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		// ここに記述
+		//※SampleMainを参考に人間とコンピュータとで対戦できるようにする
+		//		・メソッド
+		//		+ __main(args:String[]):戻り値の型 void 
+		//		・HumanPlayer型のオブジェクトを生成する。
+		HumanPlayer p1 = new HumanPlayer("suzuki");
+		//		・ComPlayer型のオブジェクトを生成する。
+		ComPlayer p2 = new ComPlayer();
+		//		・二つのオブジェクトをJankenBattle.doBattle()の引数に設定する
+		Playable winner =JankenBattle.doBattle(p1, p2);
+		//		・戻り値がHumanPlayerオブジェクトであれば人間の勝ち、そうでなければコンピュータの勝ちを表示する
 
+		//		HumanPlayer p1 = new HumanPlayer("suzuki");
+		//		HumanPlayer p2 = new HumanPlayer("tanaka");
+		//				
+		//		Playable winner = JankenBattle.doBattle(p1, p2);
+		//				
+		if (winner == null) {
+			System.out.println("あいこです");
+		} else if (winner.equals(p1)) {
+			System.out.println(p1.getName() + "さんの勝ちです");
+		} else if (winner.equals(p2)) {
+			System.out.println(p2.getName() + "さんの勝ちです");
+
+		}
 	}
 
 }

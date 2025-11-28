@@ -35,9 +35,16 @@ package day04;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+/**
+ * @author 自分
+ */
 public class Lesson7 {
 
+	/**
+	 * 数当てゲーム
+	 * @param args 不使用
+	 * @throws IOException 入力エラー
+	 */
 	public static void main(String[] args) throws IOException {
 		/*ここから記入*/
 			//		解説解答
@@ -67,7 +74,7 @@ public class Lesson7 {
 			//	正解のパターン
 			if (inputNum == collectNum) {
 				System.out.println("正解！");
-			//	While処理終わる
+				//	While処理終わる
 				break;
 			}
 

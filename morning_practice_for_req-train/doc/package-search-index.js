@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"day04"},{"l":"すべてのパッケージ","u":"allpackages-index.html"}];updateSearchResults();

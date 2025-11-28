@@ -1,12 +1,23 @@
+//【ConsoleReaderクラス】
+//	※既存クラスを修正すること
+//	・メソッド（修正箇所のみ記載）
+//		+ inputPIN():戻り値の型 int throws IOException,IllegalInputException
+//			※コメントの場所に以下を追記
+//			・if[4桁の数字以外の入力値の場合]
+//				・throw new IllegalInputException("不正な入力:" + 入力値)
+//			ヒント：条件は正規表現をつかって記述すること（P135参照）
+
 package day10.q01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ConsoleReader {
 
-	public int inputPIN() throws IOException {
+	public int inputPIN() throws IOException, IllegalInputException {
 		int pin = -1;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -15,7 +26,12 @@ public class ConsoleReader {
 		String inputString = br.readLine();
 
 		/* ここに記述 */
-
+		Pattern p = Pattern.compile("^[0-9]{4}$");
+		Matcher m = p.matcher(inputString);
+		//if (inputString.length()!=4) {
+		if (m.find() == false) {
+			throw new IllegalInputException("不正な入力:" + inputString);
+		}
 		/* 記述終了 */
 
 		pin = Integer.parseInt(inputString);

@@ -62,8 +62,44 @@
 
 package day10.q01;
 
+import java.io.IOException;
+
 public class Main {
 
 	// ここから追記してください
+	//【Mainクラス】
+	//	・メソッド
+	//		+ __main(args:String[]):戻り値の型 void 
+	public static void main(String[] args) {
+		//			・Account型のオブジェクトを生成する。
+		Account account = new Account();
+		//			・ConsoleReader型のオブジェクトを生成する。
+		ConsoleReader cr = new ConsoleReader();
+		//			・暗証番号入力用の変数を宣言。
+		int pass;
+		// TODO: handle exception
+		//			・tryブロック
+		try {
+			//・consoleReader#inputPIN()を呼び出し、変数に代入
+			//			ConsoleReader consoleReader = new ConsoleReader();
+			pass = cr.inputPIN();
+			//				・if[Account#getPin()==入力値]
+			if (account.getPin() == pass) {
+				//・"認証しました"と出力
+				System.out.println("認証しました");
+				//・Account#showAccount()を呼び出す
+				account.showAccount();
+				//・else
+			} else {
+				//・"暗証番号が違います"と出力
+				System.out.println("暗証番号が違います");
+			}
+		} catch (IOException | IllegalInputException e) {
+			//・catchブロック[IOException | IllegalInputException]
+			//・e.printStackTrace()
+			e.printStackTrace();
+		}
+
+	}
 
 }
